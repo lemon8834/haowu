@@ -1,0 +1,45 @@
+body, html {
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #999;
+}
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+.container {
+  flex: 1;
+  .container-inner {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
