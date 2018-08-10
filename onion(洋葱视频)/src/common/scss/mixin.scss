@@ -1,0 +1,55 @@
+// 适配背景图
+@mixin bg-image($url, $suf) {
+  background-image: url($url + '@2x.' + $suf);
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url($url + '@3x.' + $suf)
+  }
+}
+
+// 拓展点击区域
+@mixin extend-click() {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+  }
+}
+
+// 溢出省略号
+@mixin nowrap {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+// 箭头
+@mixin arrows($direction, $px, $color) {
+  @if $direction == 'top' {
+    border-top: $px solid transparent;
+    border-left: $px solid transparent;
+    border-right: $px solid transparent;
+    border-bottom: $px solid $color;
+  }
+  @else if $direction == 'bottom' {
+    border-top: $px solid $color;
+    border-left: $px solid transparent;
+    border-right: $px solid transparent;
+    border-bottom: $px solid transparent;
+  }
+  @else if $direction == 'left' {
+    border-top: $px solid transparent;
+    border-left: $px solid transparent;
+    border-right: $px solid $color;
+    border-bottom: $px solid transparent;
+  }
+  @else if $direction == 'right'{
+    border-top: $px solid transparent;
+    border-left: $px solid $color;
+    border-right: $px solid transparent;
+    border-bottom: $px solid transparent;
+  }
+}
